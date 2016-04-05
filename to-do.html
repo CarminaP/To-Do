@@ -1,0 +1,59 @@
+<html class="no-js" lang="en">
+    <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lazy Out</title>
+    <style type="text/css">
+        form {
+            display: inline-block;
+        }
+        
+        #button{
+            display: inline-block;
+            height: 20px;
+            width: 70px;
+            background-color: #FF0000;
+            color:#ffffff;
+            border-radius:5px;
+            text-align: center;
+            margin-top:2px;
+            }
+
+            .list {
+                color:black
+            }
+        }
+        </style>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script url="code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	  <script type="text/javascript" src="http://www.google-analytics.com/analytics.js"></script>
+    <script url="code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script>
+
+    $(document).ready(function() {
+        $("#button").click(function(){
+           var toAdd = $("input[name=checkListItem]").val();
+            $(".list").append('<div class="item">'+ toAdd + '</div>')
+        });
+        $(document).on("click",".item", function(){
+           $(this).remove(); 
+        });
+      });
+    </script>
+</head>
+<body>
+    <div id="right">
+        <p id="yey">TO-DO:</p>
+        <p id="things"> 
+            <form name ="checkListForm">
+                <input type="text" name="checkListItem"/>
+          </form>
+          <div id="button"> Add </div>
+          <br/>
+          <div class = "list"></div>
+        </p>
+      </div>
+    </body>
+</html>
